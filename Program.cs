@@ -33,6 +33,8 @@ System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessSt
 // executing the cmd window in a hidden way
 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
 startInfo.FileName = "cmd.exe";
-startInfo.Arguments = $"cd {pathToSaveFile} && explorer .";
+startInfo.Arguments = $"/C cd {pathToSaveFile} && explorer .";
 process.StartInfo = startInfo;
 process.Start();
+Console.WriteLine("Press any key to exit.");
+Console.ReadKey();
